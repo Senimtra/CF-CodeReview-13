@@ -270,4 +270,17 @@ class TodoController extends AbstractController
 
         return $this->redirectToRoute('todo');
     }
+
+    ###########################
+    ## Route -> Home (index) ##
+    ###########################
+
+    #[Route('/movies', name: 'todo_movies')]
+    public function movies(): Response
+    {
+        // ### fetch all records from the database (type = "movie") ###
+
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array('type' => 'movie'));
+        return $this->render('todo/index.html.twig', array('todos' => $todos));
+    }
 }
