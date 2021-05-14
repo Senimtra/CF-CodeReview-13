@@ -271,9 +271,9 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('todo');
     }
 
-    ###########################
-    ## Route -> Home (index) ##
-    ###########################
+    #############################
+    ## Route -> Movies (index) ##
+    #############################
 
     #[Route('/movies', name: 'todo_movies')]
     public function movies(): Response
@@ -281,6 +281,43 @@ class TodoController extends AbstractController
         // ### fetch all records from the database (type = "movie") ###
 
         $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array('type' => 'movie'));
+        return $this->render('todo/index.html.twig', array('todos' => $todos));
+    }
+
+    #############################
+    ## Route -> Sports (index) ##
+    #############################
+
+    #[Route('/sports', name: 'todo_sports')]
+    public function sports(): Response
+    {
+        // ### fetch all records from the database (type = "sport") ###
+
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array('type' => 'sport'));
+        return $this->render('todo/index.html.twig', array('todos' => $todos));
+    }
+    ############################
+    ## Route -> Music (index) ##
+    ############################
+
+    #[Route('/music', name: 'todo_music')]
+    public function music(): Response
+    {
+        // ### fetch all records from the database (type = "music") ###
+
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array('type' => 'music'));
+        return $this->render('todo/index.html.twig', array('todos' => $todos));
+    }
+    ############################
+    ## Route -> Shows (index) ##
+    ############################
+
+    #[Route('/shows', name: 'todo_shows')]
+    public function shows(): Response
+    {
+        // ### fetch all records from the database (type = "show") ###
+
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array('type' => 'show'));
         return $this->render('todo/index.html.twig', array('todos' => $todos));
     }
 }
