@@ -12,9 +12,7 @@
                     <img src="{{todo.image}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{todo.name}}</h5>
-
-                    {# <td>{{todo.date|date('F j, Y, g:i a')}}</td> the duedate of the todo, when we want to print a date we must choose the format |date('F j, Y, g:i a') otherwise we will have error #}
-
+                        <p class="card-text">{{todo.date|date('F j, Y, g:i a')}}</p>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
                         {# ### CRUD-buttons details/edit/delete ### #}
