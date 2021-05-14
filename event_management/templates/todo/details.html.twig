@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <hr>
-    <h2 class="page-header">{{todo.name}}</h2>
-    <img src="{{todo.image}}">
-    <ul class="list-group">
-        {# <li class="list-group-item">Due: <strong> {{todo.dueDate|date('F j, Y, g:i a')}} </strong> </li> #}
-    </ul>
-    <p>
-        {{todo.description}}
-    </p><br>
-    <a class="btn btn-default" href="/">Home</a>
+<div class="container">
+    <div class="card p-3 mt-5">
+        <img src="{{todo.image}}" class="card-img-top" alt="{{todo.name}}-image">
+        <div class="card-body">
+            <h1 class="card-text">{{todo.name}}</h1>
+            <h5 class="card-text">{{todo.date|date('F j, Y, g:i a')}} | Capacity: {{todo.capacity}}
+             | {{todo.type}} | Price:&nbsp; € {{todo.price|number_format(2)}}</h5>
+            <p class="card-text">{{todo.description}}</p>
+            <p class="card-text">{{todo.email}} | {{todo.phone}}</p>
+            <p class="card-text">{{todo.address}}</p>
+            <a href="#">{{todo.url}}</a>
+        </div>
+        <a href="/"><button class="btn btn-danger">Home</button></a>
+    </div>
+</div>
 {% endblock %}

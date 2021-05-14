@@ -2,12 +2,18 @@
 
 {% block body %}
 
-<h2 class="page-header">Add Event</h2>
+    <div class="container">
+        <div class="card p-3 mt-5">
+            <h2 class="page-header">Add Event</h2>
 
-    {{form_start(form)}}
+            {{form_start(form)}}
 
-    {{form_widget(form)}}
+            {{form_widget(form)}}
 
-    {{form_end(form)}}
+            {{form_end(form)}}
+
+            <a href="/"><button class="btn btn-danger">Home</button></a>
+        </div>
+    </div>
 
 {% endblock %}

@@ -38,9 +38,17 @@ class TodoController extends AbstractController
     {
         // ### fetch all records from the database ###
 
-        $todos = $this->getDoctrine()->getRepository('App:Todo')->findAll();
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findAll('type');
+        // $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array(), array('type' => 'DESC'));
         return $this->render('todo/index.html.twig', array('todos' => $todos));
     }
+
+    // $ens = $em->getRepository('AcmeBinBundle:Marks')
+    //       ->findBy(
+    //          array('type'=> 'C12'), 
+    //          array('id' => 'ASC')
+    //        );
+
 
     ##############################
     ## Route -> Create (create) ##
