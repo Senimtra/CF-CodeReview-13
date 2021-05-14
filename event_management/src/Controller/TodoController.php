@@ -27,7 +27,12 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Todo;
 
 class TodoController extends AbstractController
+
 {
+    ###########################
+    ## Route -> Home (index) ##
+    ###########################
+
     #[Route('/', name: 'todo')]
     public function index(): Response
     {
@@ -36,6 +41,11 @@ class TodoController extends AbstractController
         $todos = $this->getDoctrine()->getRepository('App:Todo')->findAll();
         return $this->render('todo/index.html.twig', array('todos' => $todos));
     }
+
+    ##############################
+    ## Route -> Create (create) ##
+    ##############################
+
     #[Route('/create', name: 'todo_create')]
     public function create(Request $request): Response
     {
@@ -112,18 +122,32 @@ class TodoController extends AbstractController
             return $this->redirectToRoute('todo');
         }
 
-        /* now to make the form we will add this line form->createView() and now you can see the form in create.html.twig file  */
+        // ### Rendering the form in the view (create.html.twig) ###
 
         return $this->render('todo/create.html.twig', array('form' => $form->createView()));
     }
+
+    ##########################
+    ## Route -> Edit (edit) ##
+    ##########################
+
     #[Route('/edit/{id}', name: 'todo_edit')]
     public function edit(): Response
     {
         return $this->render('todo/edit.html.twig');
     }
+
+    ################################
+    ## Route -> Details (details) ##
+    ################################
+
     #[Route('/details/{id}', name: 'todo_details')]
     public function details($id): Response
     {
-        return $this->render('todo/details.html.twig');
+
+        // ### Finding the passed id and sending the record as an array ###
+
+        $todo = $this->getDoctrine()->getRepository('App:Todo')->find($id);
+        return $this->render('todo/details.html.twig', array('todo' => $todo));
     }
 }
