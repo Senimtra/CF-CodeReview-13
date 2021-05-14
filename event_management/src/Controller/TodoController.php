@@ -67,6 +67,7 @@ class TodoController extends AbstractController
             ->add('address', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('url', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('type', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('price', IntegerType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('save', SubmitType::class, array('label' => 'Create Todo', 'attr' => array('class' => 'btn-primary', 'style' => 'margin-bottom:15px')))
             ->getForm();
         $form->handleRequest($request);
@@ -87,6 +88,7 @@ class TodoController extends AbstractController
             $address = $form['address']->getData();
             $url = $form['url']->getData();
             $type = $form['type']->getData();
+            $price = $form['price']->getData();
 
             // ### Setting the data in the Entity ###
 
@@ -100,6 +102,7 @@ class TodoController extends AbstractController
             $todo->setAddress($address);
             $todo->setUrl($url);
             $todo->setType($type);
+            $todo->setPrice($price);
 
             // ### Preparing the database query ###
 
@@ -150,6 +153,7 @@ class TodoController extends AbstractController
         $todo->setAddress($todo->getAddress());
         $todo->setUrl($todo->getUrl());
         $todo->setType($todo->getType());
+        $todo->setPrice($todo->getPrice());
 
         // ### Builing the form by using the createFormBuilder-function ###
 
@@ -164,6 +168,7 @@ class TodoController extends AbstractController
             ->add('address', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('url', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('type', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('price', IntegerType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
             ->add('save', SubmitType::class, array('label' => 'Update Todo', 'attr' => array('class' => 'btn-primary', 'style' => 'margin-botton:15px')))
             ->getForm();
         $form->handleRequest($request);
@@ -184,6 +189,7 @@ class TodoController extends AbstractController
             $address = $form['address']->getData();
             $url = $form['url']->getData();
             $type = $form['type']->getData();
+            $price = $form['price']->getData();
 
             // ### Setting the data in the Entity ###
 
@@ -197,6 +203,7 @@ class TodoController extends AbstractController
             $todo->setAddress($address);
             $todo->setUrl($url);
             $todo->setType($type);
+            $todo->setPrice($price);
 
             // ### Preparing the database query ###
 
