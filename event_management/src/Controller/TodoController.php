@@ -114,7 +114,7 @@ class TodoController extends AbstractController
 
             $this->addFlash(
                 'notice',
-                'Todo Added'
+                'Event Added'
             );
 
             // ### Redirect to Home (index) ###
@@ -132,9 +132,96 @@ class TodoController extends AbstractController
     ##########################
 
     #[Route('/edit/{id}', name: 'todo_edit')]
-    public function edit(): Response
+    public function edit(Request $request, $id): Response
     {
-        return $this->render('todo/edit.html.twig');
+        // ### Find the requested record by given id ###
+
+        $todo = $this->getDoctrine()->getRepository('App:Todo')->find($id);
+
+        // ### Setting the record values that already exist ###
+
+        $todo->setName($todo->getName());
+        $todo->setImage($todo->getImage());
+        $todo->setDescription($todo->getDescription());
+        $todo->setCapacity($todo->getCapacity());
+        $todo->setDate($todo->getDate());
+        $todo->setEmail($todo->getEmail());
+        $todo->setPhone($todo->getPhone());
+        $todo->setAddress($todo->getAddress());
+        $todo->setUrl($todo->getUrl());
+        $todo->setType($todo->getType());
+
+        // ### Builing the form by using the createFormBuilder-function ###
+
+        $form = $this->createFormBuilder($todo)
+            ->add('name', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('image', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('description', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('capacity', IntegerType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('date', DateTimeType::class, array('attr' => array('style' => 'margin-bottom:15px')))
+            ->add('email', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('phone', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('address', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('url', TextareaType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('type', TextType::class, array('attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('save', SubmitType::class, array('label' => 'Update Todo', 'attr' => array('class' => 'btn-primary', 'style' => 'margin-botton:15px')))
+            ->getForm();
+        $form->handleRequest($request);
+
+        // ### Form-submit validation ###
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // ### Getting the data from the inputs ###
+
+            $name = $form['name']->getData();
+            $image = $form['image']->getData();
+            $description = $form['description']->getData();
+            $capacity = $form['capacity']->getData();
+            $date = $form['date']->getData();
+            $email = $form['email']->getData();
+            $phone = $form['phone']->getData();
+            $address = $form['address']->getData();
+            $url = $form['url']->getData();
+            $type = $form['type']->getData();
+
+            // ### Setting the data in the Entity ###
+
+            $todo->setName($name);
+            $todo->setImage($image);
+            $todo->setDescription($description);
+            $todo->setCapacity($capacity);
+            $todo->setDate($date);
+            $todo->setEmail($email);
+            $todo->setPhone($phone);
+            $todo->setAddress($address);
+            $todo->setUrl($url);
+            $todo->setType($type);
+
+            // ### Preparing the database query ###
+
+            $em = $this->getDoctrine()->getManager();
+            $todo = $em->getRepository('App:Todo')->find($id);
+
+            // ### Performing the database query ###
+
+            $em->flush();
+
+            // ### Print notice ###
+
+            $this->addFlash(
+                'notice',
+                'Event Updated'
+            );
+
+            // ### Redirect to Home (index) ###
+
+            return $this->redirectToRoute('todo');
+        }
+
+        // ### Rendering the form in the view (edit.html.twig) ###
+
+        return $this->render('todo/edit.html.twig', array('todo' => $todo, 'form' => $form->createView()));
     }
 
     ################################
@@ -149,5 +236,38 @@ class TodoController extends AbstractController
 
         $todo = $this->getDoctrine()->getRepository('App:Todo')->find($id);
         return $this->render('todo/details.html.twig', array('todo' => $todo));
+    }
+
+    ##############################
+    ## Route -> Delete (delete) ##
+    ##############################
+
+    #[Route('/delete/{id}', name: 'todo_delete')]
+    public function delete($id)
+    {
+
+        // ### Find the record in the database ###
+
+        $em = $this->getDoctrine()->getManager();
+        $todo = $em->getRepository('App:Todo')->find($id);
+
+        // ### Remove the record from the Entity ###
+
+        $em->remove($todo);
+
+        // ### Perform the database query ###
+
+        $em->flush();
+
+        // ### Print notice ###
+
+        $this->addFlash(
+            'notice',
+            'Event Removed'
+        );
+
+        // ### Redirect to Home (index) ###
+
+        return $this->redirectToRoute('todo');
     }
 }
