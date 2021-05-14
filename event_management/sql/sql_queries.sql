@@ -3,7 +3,7 @@ INSERT INTO `todo` (`name`, `image`) VALUES
 ('All out Comets', 'http://shallow.codes/images_CR13/event03_all_comets_music.jpg'),
 ('Debbie Hill', 'http://shallow.codes/images_CR13/event10_debbie_hill_music.jpg'),
 ('Blurred System', 'http://shallow.codes/images_CR13/event06_blurred_system_music.jpg'),
-('Thames Marathon', 'http://shallow.codes/images_CR13/event34_thames_marathon.jpg'),
+('Thames Marathon', 'http://shallow.codes/images_CR13/event34_thames_marathon_sport.jpg'),
 ('Celestial Ridge', 'http://shallow.codes/images_CR13/event09_celestial_ridge_show.jpg'),
 ('Moonlit Circus', 'http://shallow.codes/images_CR13/event24_moonlit_circus_show.jpg'),
 ('Love Happens', 'http://shallow.codes/images_CR13/event11_love_happens_movie.jpg'),

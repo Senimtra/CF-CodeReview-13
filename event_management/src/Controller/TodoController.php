@@ -11,7 +11,9 @@ class TodoController extends AbstractController
     #[Route('/', name: 'todo')]
     public function index(): Response
     {
-        return $this->render('todo/index.html.twig');
+        // ### fetch all records from the database ###
+        $todos = $this->getDoctrine()->getRepository('App:Todo')->findAll();
+        return $this->render('todo/index.html.twig', array('todos' => $todos));
     }
     #[Route('/create', name: 'todo_create')]
     public function create(): Response
