@@ -88,27 +88,26 @@ html {
     a:hover {
         color: #d0142c;
     }
-
-
-    // a,
-    // a:hover,
-    // a:active {
-    //     // color: #F8F9FA,
-    //     color: red;
-
 }
 
 
 // ### Footer styles begin here ###
 
 .footer {
+
     border: 1rem solid #d0142c;
-    // background-color: #d0142c;
     border-radius: 0.3rem;
 }
 
 .footer-inside {
-    // border-radius: 0.3rem;
-    opacity: 0.9;
-    background-color: #F8F9FA;
+    background-image: url("../../images/footer.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 150%;
+}
+
+.fab {
+    color: rgb(0, 33, 58);
 }

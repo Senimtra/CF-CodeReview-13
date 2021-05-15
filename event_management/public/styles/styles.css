@@ -89,7 +89,22 @@ html {
 }
 
 .footer-inside {
-  opacity: 0.9;
-  background-color: #F8F9FA;
+  background-image: url("../../images/footer.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 150%;
+}
+
+.fab {
+  color: #00213a;
 }
 /*# sourceMappingURL=styles.css.map */
