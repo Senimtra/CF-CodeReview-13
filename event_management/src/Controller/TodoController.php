@@ -7,7 +7,10 @@ namespace App\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+// ### ChoiceType not yet used in the project ###
+// use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 // ### Add IntegerType Component to handle event capacity ###
@@ -42,13 +45,6 @@ class TodoController extends AbstractController
         // $todos = $this->getDoctrine()->getRepository('App:Todo')->findBy(array(), array('type' => 'DESC'));
         return $this->render('todo/index.html.twig', array('todos' => $todos));
     }
-
-    // $ens = $em->getRepository('AcmeBinBundle:Marks')
-    //       ->findBy(
-    //          array('type'=> 'C12'), 
-    //          array('id' => 'ASC')
-    //        );
-
 
     ##############################
     ## Route -> Create (create) ##
