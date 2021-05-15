@@ -33,12 +33,54 @@ html {
   border: 1rem solid #d0142c;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+  font-size: 120%;
+}
+
+.navbar-brand {
+  font-size: 180%;
+}
+
+.navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0;
+}
+
+.navbar-nav li {
+  margin-right: 0.5rem;
+}
+
+.btn-nav:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-nav:focus {
+  -webkit-box-shadow: inset 0 0 2px 3px rgba(156, 156, 156, 0.6);
+          box-shadow: inset 0 0 2px 3px rgba(156, 156, 156, 0.6);
 }
 
 .content {
   border: 1rem solid #d0142c;
   border-radius: 0.3rem;
   background-color: rgba(248, 249, 250, 0.9);
+}
+
+.btn-group {
+  background-color: #00213a;
+}
+
+.btn-group a {
+  color: #F8F9FA;
+}
+
+.btn-group a:hover {
+  color: #d0142c;
 }
 
 .footer {

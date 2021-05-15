@@ -1,48 +1,48 @@
 {# ### Bootstrap navbar ### #}
 <div class="container sticky-top p-0">
-<nav class="navbar navbar-expand-sm navbar-light mb-5">
+<nav class="navbar navbar-expand-md navbar-light mb-5 p-1">
   <div class="container">
-    <a class="navbar-brand" href="#">LONDON</a>
+    <a class="navbar-brand p-0" href="#">LONDON</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto p-0">
         <li class="nav-item">
           
           {# ### Route to index.html.twig ### #}
 
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a href="/" class="nav-link active btn btn-nav" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
 
           {# ### Route to create.html.twig ### #}
 
-          <a class="nav-link" href="/create">Create</a>
+          <a href="/create" class="nav-link btn btn-nav">Create</a>
         </li>
         <li class="nav-item">
 
           {# ### Route to /movies -> index.html.twig ### #}
 
-          <a class="nav-link" href="/movies">Movies</a>
+          <a href="/movies" class="nav-link btn btn-nav">Movies</a>
         </li>
         <li class="nav-item">
 
           {# ### Route to /sports -> index.html.twig ### #}
 
-          <a class="nav-link" href="/sports">Sports</a>
+          <a href="/sports" class="nav-link btn btn-nav">Sports</a>
         </li>
         <li class="nav-item">
 
           {# ### Route to /music -> index.html.twig ### #}
 
-          <a class="nav-link" href="/music">Music</a>
+          <a href="/music" class="nav-link btn btn-nav">Music</a>
         </li>
         <li class="nav-item">
 
           {# ### Route to /shows -> index.html.twig ### #}
 
-          <a class="nav-link" href="/shows">Shows</a>
+          <a href="/shows" class="nav-link btn btn-nav">Shows</a>
         </li>
       </ul>
     </div>
