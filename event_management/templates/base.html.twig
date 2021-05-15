@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
     </head>
     <body>
+        {% include "components/header.html.twig" %}
         {% include "components/navbar.html.twig" %}
         {% block body %}{% endblock %}
         
