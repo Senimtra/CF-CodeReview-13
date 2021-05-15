@@ -68,11 +68,44 @@ html {
 .content {
   border: 1rem solid #d0142c;
   border-radius: 0.3rem;
-  background-color: rgba(248, 249, 250, 0.9);
+  background-color: rgba(202, 202, 202, 0.9);
+}
+
+.card {
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0px 0px 1px black;
+          box-shadow: 0px 0px 1px black;
+}
+
+.card-img-top {
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0px 0px 1px black;
+          box-shadow: 0px 0px 1px black;
+}
+
+.card-body {
+  background-image: url("../../images/card_bg.jpg");
+  background-position: center;
+  -webkit-box-shadow: 0px 0px 1px black;
+          box-shadow: 0px 0px 1px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .btn-group {
   background-color: #00213a;
+  border-radius: 0.2rem;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .btn-group a {
@@ -91,6 +124,7 @@ html {
 .footer-inside {
   background-image: url("../../images/footer.jpg");
   background-size: cover;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
