@@ -1,5 +1,7 @@
+// ### Background-image ###
+
 body {
-    background: url("../../images/background8.jpg") no-repeat center fixed;
+    background: url("../../images/background5.jpg") no-repeat center fixed;
     background-size: cover;
 }
 
@@ -14,6 +16,8 @@ body {
 html {
     scrollbar-width: none;
 }
+
+// ### Hero-section styles begin here ###
 
 .hero-image {
     background-image: url("../../images/unionjack2.jpg");
@@ -31,11 +35,36 @@ html {
     }
 }
 
+// ### Navbar styles begin here ###
+
 .navbar {
+    background-image: url("../../images/navbar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 1rem solid #d0142c;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+
 }
 
-// .card-img-top {
-// width: 100%;
-// height: 100%;
-// }
+// ### Content styles begin here ###
+
+.content {
+    border: 1rem solid #d0142c;
+    border-radius: 0.3rem;
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+// ### Footer styles begin here ###
+
+.footer {
+    border: 1rem solid #d0142c;
+    // background-color: #d0142c;
+    border-radius: 0.3rem;
+}
+
+.footer-inside {
+    // border-radius: 0.3rem;
+    opacity: 0.9;
+    background-color: #F8F9FA;
+}

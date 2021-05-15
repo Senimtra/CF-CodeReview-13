@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div class="container">
+    <div class="container content pt-2">
         <div class="row">
 
             {# ### Looping through todo to get the values from all records ### #}
@@ -18,9 +18,12 @@
 
                         {# ### CRUD-buttons details/edit/delete ### #}
 
-                        <a href="/details/{{todo.id}}" class="btn btn-success">View</a>
-                        <a href="/edit/{{todo.id}}" class="btn btn-warning">Edit</a>
-                        <a href="/delete/{{todo.id}}" class="btn btn-danger">Delete</a>
+                        <div class="btn-group">
+                            <a href="/details/{{todo.id}}" class="btn btn-primary active" aria-current="page">View</a>
+                            <a href="/edit/{{todo.id}}" class="btn btn-primary">Edit</a>
+                            <a href="/delete/{{todo.id}}" class="btn btn-primary">Delete</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

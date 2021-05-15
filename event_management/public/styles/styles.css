@@ -1,5 +1,5 @@
 body {
-  background: url("../../images/background8.jpg") no-repeat center fixed;
+  background: url("../../images/background5.jpg") no-repeat center fixed;
   background-size: cover;
 }
 
@@ -27,6 +27,27 @@ html {
 }
 
 .navbar {
+  background-image: url("../../images/navbar.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1rem solid #d0142c;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.content {
+  border: 1rem solid #d0142c;
+  border-radius: 0.3rem;
+  background-color: rgba(248, 249, 250, 0.9);
+}
+
+.footer {
+  border: 1rem solid #d0142c;
+  border-radius: 0.3rem;
+}
+
+.footer-inside {
+  opacity: 0.9;
+  background-color: #F8F9FA;
 }
 /*# sourceMappingURL=styles.css.map */
