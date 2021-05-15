@@ -11,10 +11,11 @@
                 <div class="card text-center p-2 mb-3">
                     <img src="{{todo.image}}" class="card-img-top" alt="...">
                     <div class="card-body mt-2">
-                        <h5 class="card-title">{{todo.name}}&nbsp;&nbsp;&nbsp;&nbsp;
-                        <small>€&nbsp;{{todo.price|number_format(2)}}</small></h5>
-                        <p class="card-text">{{todo.date|date('F j, Y, g:i a')}}</p>
-                        <p class="card-text">{{todo.description|slice(0, 50)}}...</p>
+                        <h5 class="card-title">{{todo.name}}</h5>
+                        <p class="card-text">Price:&nbsp; € {{todo.price|number_format(2)}}<br>
+                        {{todo.date|date('d/m/Y, H:i')}}</p>
+                        <div class="card card-address mb-1"><i>{{todo.address}}</i></div>
+                        <p class="card-text"><small>{{todo.description|slice(0, 50)}}...</small></p>
 
                         {# ### CRUD-buttons details/edit/delete ### #}
 

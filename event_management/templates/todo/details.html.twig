@@ -7,8 +7,8 @@
             <h1 class="card-text">{{todo.name}}</h1>
             <h5 class="card-text">{{todo.date|date('F j, Y, g:i a')}} | Capacity: {{todo.capacity}}
              | {{todo.type}} | Price:&nbsp; € {{todo.price|number_format(2)}}</h5>
-            <p class="card-text">{{todo.description}}</p>
-            <p class="card-text">{{todo.email}} | {{todo.phone}}</p>
+            <div class="card card-details p-2 px-3 mt-2 mb-3">{{todo.description}}</div>
+            <p class="card-text">E-mail: {{todo.email}} | Phone: {{todo.phone}}</p>
             <p class="card-text">{{todo.address}}</p>
             <a href="#">{{todo.url}}</a>
         </div>

@@ -100,6 +100,11 @@ html {
           justify-content: space-between;
 }
 
+.card-address,
+.card-details {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
 .btn-group {
   background-color: #00213a;
   border-radius: 0.2rem;
